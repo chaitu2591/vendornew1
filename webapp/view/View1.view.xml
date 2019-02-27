@@ -1,0 +1,38 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:flex="sap.m.FlexAlignContent" controllerName="VendorMaster.VendorMaster.controller.View1" displayBlock="true">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					
+				<Label text="Vendor" width="30%" id="label0" />
+					
+				<Input xmlns="sap.m" value=" " id="input0" width="40%"/>
+				
+				<Button xmlns="sap.m" text="Search" id="button0" activeIcon="sap-icon://search" icon="sap-icon://search" 
+				press="Search_press" type="Emphasized" width="10%"/>
+				
+					<smartTable:SmartTable entitySet="VendorDetailsSet" tableType="ResponsiveTable" useExportToExcel="false" enableAutoBinding="false" id="test">
+							<Table id="table" items="{path:'tab>/d/results'}" growing="true">
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{tab>Vendor}" maxLines="0" id="even"/>
+											<Text text="{tab>Name}" maxLines="0" id="ename"/>
+										 </cells> 
+									</ColumnListItem>
+								</items>
+								<columns>
+									<Column id="col0">
+										<Text text="Vendor" id="lab0"/>
+									</Column>
+									<Column id="col1">
+										<Text text="Name" id="lab1"/>
+									</Column>
+								</columns>
+							</Table>
+						</smartTable:SmartTable>	
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
